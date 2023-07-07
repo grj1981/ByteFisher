@@ -1,10 +1,40 @@
+<!DOCTYPE html>
 <html>
+<head>
+<title></title>
 <script language="javascript">
+// 设置倒计时时间
+var countDownTime = 10;
+
 var domain = "www.bytefisher.top";
 var src = window.location.href;
 var prtc = src.substring(0, src.indexOf(':'));
 var target = src.substring(src.indexOf('/', src.indexOf(':') + 3));
-window.location.href = prtc + "://" + domain + target;
-location.href=prtc + "://" + domain + target;
+
+
+// 页面加载完成后开始倒计时
+window.onload = function() {
+// 显示倒计时时间
+document.getElementById("countdown").innerHTML = countDownTime;
+
+// 开始倒计时
+setInterval(function() {
+countDownTime -= 1;
+
+// 更新倒计时时间
+document.getElementById("countdown").innerHTML = countDownTime;
+
+// 当倒计时时间为0时，重定向到指定网址
+if (countDownTime === 0) {
+  window.location.href = prtc + "://" + domain + target;
+  location.href=prtc + "://" + domain + target;
+}
+}, 1000);
+};
 </script>
+</head>
+<body>
+<h1>正在启用新的域名：https://www.bytefisher.top</h1>
+<p>This page does not exist. You will be redirected to the specified website in <span id="countdown"></span> seconds.</p>
+</body>
 </html>
