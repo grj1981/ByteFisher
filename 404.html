@@ -8,26 +8,26 @@ var countDownTime = 10;
   
 // 页面加载完成后开始倒计时
 window.onload = function() {
-// 显示倒计时时间
-document.getElementById("countdown").innerHTML = countDownTime;
-
-// 开始倒计时
-setInterval(function() {
-countDownTime -= 1;
-
-// 更新倒计时时间
-document.getElementById("countdown").innerHTML = countDownTime;
-
-// 当倒计时时间为0时，重定向到指定网址
-if (countDownTime === 0) {
-  var domain = "www.bytefisher.top";
-  var src = window.location.href;
-  var prtc = src.substring(0, src.indexOf(':'));
-  var target = src.substring(src.indexOf('/', src.indexOf(':') + 3));
-  window.location.href = prtc + "://" + domain + target;
-  location.href=prtc + "://" + domain + target;
-}
-}, 1000);
+    // 显示倒计时时间
+    document.getElementById("countdown").innerHTML = countDownTime;
+    
+    // 开始倒计时
+    setInterval(function() {
+      countDownTime -= 1;
+      
+      // 更新倒计时时间
+      document.getElementById("countdown").innerHTML = countDownTime;
+      
+      // 当倒计时时间为0时，重定向到指定网址
+      if (countDownTime === 0) {
+        var domain = "www.bytefisher.top";
+        var src = window.location.href;
+        var prtc = src.substring(0, src.indexOf(':'));
+        var target = src.substring(src.indexOf('/', src.indexOf(':') + 3));
+        window.location.href = prtc + "://" + domain + target;
+        location.href=prtc + "://" + domain + target;
+      }
+    }, 1000);
 };
 </script>
 </head>
