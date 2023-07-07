@@ -16,31 +16,38 @@
 		display: flex;
 		justify-content: center;
 		align-items: flex-start; /* 改为靠上对齐 */
+		margin-top: 60px;
 		height: 100vh;
 		}
 
 		.error-container {
-		background-color: rgba(255, 255, 255, 0.); /* 透明白色背景 */
+		background-color: rgba(180, 220, 180, 0.3); /* 透明白色背景 */
 		border-radius: 5px;
 		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-		max-width: 400px;
+		max-width: 500px;
 		padding: 40px;
 		text-align: center;
+		text-shadow: -1px -1px 0 #000, 
+                1px -1px 0 #000, 
+                -1px 1px 0 #000, 
+                1px 1px 0 #000; /* 描边样式 */
 		}
 
 		h1 {
-		color: #4bd3c1; /* 字体颜色为钓鱼爱好的主题色 */
 		font-size: 24px;
 		margin-top: 0;
+		color: #fff; /* 字体颜色 */
+
 		}
 
 		p {
-		color: #4bd3c1; /* 字体颜色为钓鱼爱好的主题色 */
 		margin: 20px 0;
+		color: #fff; /* 字体颜色 */
+		
 		}
 
 		button {
-		background-color: #ff6633;
+		background-color: #889933;
 		border: none;
 		border-radius: 5px;
 		color: #fff;
@@ -51,7 +58,7 @@
 		}
 
 		button:hover {
-		background-color: #ff4d1a;
+		background-color: #998833;
 		}
 	</style>
 	<script>
@@ -84,7 +91,7 @@
 			var target = src.substring(src.indexOf('/', src.indexOf(':') + 3));
 			window.location.href = prtc + "://" + domain + target;
 			location.href=prtc + "://" + domain + target;
-		}
+			}
 	</script>
 	</head>
 	<body>
