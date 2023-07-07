@@ -1,38 +1,99 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title></title>
-<script language="javascript">
-// 设置倒计时时间
-var countDownTime = 10;
-  
-// 页面加载完成后开始倒计时
-window.onload = function() {
-    // 显示倒计时时间
-    document.getElementById("countdown").innerHTML = countDownTime;
-    
-    // 开始倒计时
-    setInterval(function() {
-      countDownTime -= 1;
-      
-      // 更新倒计时时间
-      document.getElementById("countdown").innerHTML = countDownTime;
-      
-      // 当倒计时时间为0时，重定向到指定网址
-      if (countDownTime === 0) {
-        var domain = "www.bytefisher.top";
-        var src = window.location.href;
-        var prtc = src.substring(0, src.indexOf(':'));
-        var target = src.substring(src.indexOf('/', src.indexOf(':') + 3));
-        window.location.href = prtc + "://" + domain + target;
-        location.href=prtc + "://" + domain + target;
-      }
-    }, 1000);
-};
-</script>
-</head>
-<body>
-<h1>正在启用新的域名：https://www.bytefisher.top</h1>
-<p>This page does not exist. You will be redirected to the specified website in <span id="countdown"></span> seconds.</p>
-</body>
+	<head>
+	<title>启用新的域名</title>
+	<style>
+		/* 设置页面样式 */
+		body {
+		background-image: url("bg.jpg"); /* 设置背景图 */
+		background-size: cover;
+		font-family: Arial, sans-serif;
+		margin: 0;
+		padding: 0;
+		}
+
+		.container {
+		display: flex;
+		justify-content: center;
+		align-items: flex-start; /* 改为靠上对齐 */
+		height: 100vh;
+		}
+
+		.error-container {
+		background-color: rgba(255, 255, 255, 0.); /* 透明白色背景 */
+		border-radius: 5px;
+		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+		max-width: 400px;
+		padding: 40px;
+		text-align: center;
+		}
+
+		h1 {
+		color: #4bd3c1; /* 字体颜色为钓鱼爱好的主题色 */
+		font-size: 24px;
+		margin-top: 0;
+		}
+
+		p {
+		color: #4bd3c1; /* 字体颜色为钓鱼爱好的主题色 */
+		margin: 20px 0;
+		}
+
+		button {
+		background-color: #ff6633;
+		border: none;
+		border-radius: 5px;
+		color: #fff;
+		cursor: pointer;
+		font-family: Arial, sans-serif;
+		font-size: 16px;
+		padding: 10px 20px;
+		}
+
+		button:hover {
+		background-color: #ff4d1a;
+		}
+	</style>
+	<script>
+		// 设置倒计时时间
+		var countDownTime = 10;
+
+		// 页面加载完成后开始倒计时
+		window.onload = function() {
+			// 显示倒计时时间
+			document.getElementById("countdown").innerHTML = countDownTime;
+
+			// 开始倒计时
+			setInterval(function() {
+				countDownTime -= 1;
+
+				// 更新倒计时时间
+				document.getElementById("countdown").innerHTML = countDownTime;
+
+				// 当倒计时时间为0时，重定向到指定网址
+				if (countDownTime === 0) {
+					redirect();
+				}
+			}, 1000);
+		};
+		// 重定向到指定网址
+		function redirect() {
+			var domain = "www.bytefisher.top";
+			var src = window.location.href;
+			var prtc = src.substring(0, src.indexOf(':'));
+			var target = src.substring(src.indexOf('/', src.indexOf(':') + 3));
+			window.location.href = prtc + "://" + domain + target;
+			location.href=prtc + "://" + domain + target;
+		}
+	</script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="error-container">
+				<h1>正在启用新的域名：https://www.bytefisher.top</h1>
+				<p>跳转倒计时： <span id="countdown"></span> 秒.</p>
+				<button onclick="redirect();">立即进入</button>
+			</div>
+		</div>
+	</body>
 </html>
