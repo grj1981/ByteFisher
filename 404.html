@@ -5,13 +5,7 @@
 <script language="javascript">
 // 设置倒计时时间
 var countDownTime = 10;
-
-var domain = "www.bytefisher.top";
-var src = window.location.href;
-var prtc = src.substring(0, src.indexOf(':'));
-var target = src.substring(src.indexOf('/', src.indexOf(':') + 3));
-
-
+  
 // 页面加载完成后开始倒计时
 window.onload = function() {
 // 显示倒计时时间
@@ -26,6 +20,10 @@ document.getElementById("countdown").innerHTML = countDownTime;
 
 // 当倒计时时间为0时，重定向到指定网址
 if (countDownTime === 0) {
+  var domain = "www.bytefisher.top";
+  var src = window.location.href;
+  var prtc = src.substring(0, src.indexOf(':'));
+  var target = src.substring(src.indexOf('/', src.indexOf(':') + 3));
   window.location.href = prtc + "://" + domain + target;
   location.href=prtc + "://" + domain + target;
 }
