@@ -74,28 +74,14 @@
 			setInterval(function() {
 				countDownTime -= 1;
 
-				var str = "秒.";
-				var num = countDownTime % 3;
-				if(num == 0)
-				{
-					str = "秒.";
-				}
-				elseif(num == 1)
-				{
-					str = "秒..";
-				}
-				else
-				{
-					str = "秒...";
-				}
 				// 更新倒计时时间
 				if(countDownTime < 0)
 				{
-					document.getElementById("countdown").innerHTML = 0 + str;
+					document.getElementById("countdown").innerHTML = 0;
 				}
 				else
 				{
-					document.getElementById("countdown").innerHTML = countDownTime + str;
+					document.getElementById("countdown").innerHTML = countDownTime;
 				}
 
 				// 当倒计时时间为0时，重定向到指定网址
@@ -119,7 +105,7 @@
 		<div class="container">
 			<div class="error-container">
 				<h1>正在启用新的域名：https://www.bytefisher.top</h1>
-				<p>跳转倒计时： <span id="countdown"></span></p>
+				<p>跳转倒计时： <span id="countdown"></span>秒.</p>
 				<button onclick="redirect();">立即进入</button>
 			</div>
 		</div>
