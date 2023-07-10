@@ -75,7 +75,14 @@
 				countDownTime -= 1;
 
 				// 更新倒计时时间
-				document.getElementById("countdown").innerHTML = countDownTime;
+				if(countDownTime < 0)
+				{
+					document.getElementById("countdown").innerHTML = 0
+				}
+				else
+				{
+					document.getElementById("countdown").innerHTML = countDownTime;
+				}
 
 				// 当倒计时时间为0时，重定向到指定网址
 				if (countDownTime === 0) {
